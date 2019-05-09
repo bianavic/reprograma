@@ -1,0 +1,55 @@
+* {
+    background-color: rgba(245, 246, 246, 1);
+    font-family: Georgia, Times, 'Times New Roman', serif;
+}
+
+a:link {
+    color: orangered;
+}
+
+a:visited {
+    color: darkgray;
+}
+
+a:hover {
+    font-size: 110%;
+    color: orangered;
+}
+
+ul {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 3rem;
+    text-align: center;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid orangered;
+}
+
+h4 {
+    margin: 10px;
+    color: orangered;
+}
+
+.main {
+    padding: 5rem;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 2rem;
+}
+
+p {
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.footer-copyright {
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: blueviolet;
+}
