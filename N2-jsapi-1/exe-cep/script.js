@@ -1,23 +1,26 @@
-//pegando o valor do input cep
-let cep = document.getElementById('cep');
+//pegando elemento #cep HTML
+const cep = document.getElementById("cep");
 
-//O fetch esta dentro do evento escutador pq ele só vai fazer a requisição (disparo a API) quando o usuario tirar o foco do CEP
-cep.addEventListener('focusout',()=>{
-    fetch('https://viacep.com.br/ws/' + cep.value + '/json/')
-    .then(response => response.json())
-    .then(data => ){
-        console.log('SUCESSO')
-        console.log(data)
-        // codando aqui dentro
-        // da para acessar sem ter que criar uma variavel, ja que nao usamos em outro lugar
-       let bairro = document.getElementById('bairro').value = data.bairro;
-       let estado = document.getElementById('estado').value = data.uf;
-       let cidade = document.getElementById('cidade').value = data.localidade;
-       let endereco = document.getElementById('endereco').value = data.logradouro;
-       
+//
+cep.addEventListener("focusout", () =>{
+    console.log("FOCUS OUT")
+
+    //escrevendo no console valor do CEP
+    let cepVal = cep.value
+
+    fetch(`https://viacep.com.br/ws/${cepVal}/json`)
+    .then((response) =>{
+        return response.json();
     })
-    .catch(function(erro){
+    .then((data) =>{
+        console.log(data)
+        console.log(data.cep)
+        document.getElementById("estado").value = data.uf;
+        document.getElementById("bairro").value = data.bairro;
+        document.getElementById("cidade").value = data.localidade;
+        document.getElementById("endereco").value = data.logradouro;
+    })
+    .catch((erro)=>{
         console.log(erro)
     })
-    
 })
